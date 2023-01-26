@@ -14,9 +14,9 @@ class YourNumberVC: UIViewController {
     @IBAction func enterTheNumberPressed(_ sender: UIButton) {
     }
     
-        let minValue = 0
-        let maxValue = 100
-        lazy var valuesRange = minValue...maxValue
+    let minValue = 1
+    let maxValue = 100
+    lazy var valuesRange = minValue...maxValue
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,16 @@ class YourNumberVC: UIViewController {
         numberTF.delegate = self
         numberTF.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
         enterTheNumberButton.isEnabled = false
-        enterTheNumberButton.layer.cornerRadius = 15    }
+        enterTheNumberButton.layer.cornerRadius = 15
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "goTryOne" else { return }
+        guard let tryOneVC = segue.destination as? TryOneVC else { return }
+        guard let text = numberTF.text else { return }
+        let yourNumber = String("My number is \(text)")
+        tryOneVC.myNumber = yourNumber
+    }
 }
 
 extension YourNumberVC: UITextFieldDelegate {
@@ -37,7 +46,8 @@ extension YourNumberVC: UITextFieldDelegate {
     }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let newText = NSString(string: textField.text!).replacingCharacters(in: range, with: string)
+        guard let text = textField.text else { return true }
+        let newText = NSString(string: text).replacingCharacters(in: range, with: string)
         if newText.isEmpty {
           return true
         }

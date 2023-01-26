@@ -10,10 +10,9 @@ import UIKit
 
 class ScoresVC: UIViewController {
     
-    
-    
-    var yourCount = "1"
+    var yourCount = ""
     //var computerCount = "1"
+    
     
     @IBOutlet weak var yourTriesCountLabel: UILabel!
     
@@ -21,6 +20,6 @@ class ScoresVC: UIViewController {
         super.viewDidLoad()
         
         yourTriesCountLabel.text = yourCount
-        //computersTriesCount.text = computerCount
+//        computersTriesCount.text = computerCount
     }
 }

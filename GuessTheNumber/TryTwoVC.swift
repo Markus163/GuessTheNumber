@@ -13,55 +13,71 @@ class TryTwoVC: UIViewController {
     @IBOutlet weak var guessButton: UIButton!
     @IBOutlet weak var hintLabel: UILabel!
     
+    let minValue = 1
+    let maxValue = 100
+    lazy var valuesRange = minValue...maxValue
+    
+    var tapCount: Int = 0
+    let numberToGuess = Int.random(in: 1...100)
+    
     @IBAction func guessButtonPressed(_ sender: UIButton) {
+        tapCount += 1
+        guard let guessNumber = Int(numTF.text ?? "") else { return }
         
-        let guessNumber = Int(numTF.text!)
-        
-        if guessNumber != nil {
-            if numberToGuess == guessNumber {
-                hintLabel.text = ""
-                performSegue(withIdentifier: "goToScores", sender: nil)
-            } else {
-                if numberToGuess < guessNumber! {
-                    hintLabel.text = "No, my number is less than yours"
-                } else {
-                    if numberToGuess > guessNumber! {
-                        hintLabel.text = "No, my number is more than yours"
-                    }
-                }
-            }
-        }
-        if guessNumber == nil {
-            hintLabel.text = ""
+        if numberToGuess == guessNumber {
+            rightNumber()
+        } else {
+            wrongNumber(number: guessNumber)
         }
     }
     
-    var tapCount: Int = 0
     
-    let numberToGuess = Int.random(in: 0...1)
     override func viewDidLoad() {
         super.viewDidLoad()
-        guessButton.addTarget(self, action: #selector(multipleTap(sender:)), for: .touchUpInside)
+        numTF.delegate = self
+        numTF.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+        guessButton.isEnabled = false
+        guessButton.layer.cornerRadius = 15
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToScores" {
-            guard let identifier = segue.identifier,
-                  let scoresVC = segue.destination as? ScoresVC
-            else { return }
-            
-            //scoresVC.incomeSegueIdentifier = identifier
-            //mapVC.mapViewControllerDelegate = self
-
-            var yourTriesCount = String("Yours's tries count:\(tapCount)")
-            scoresVC.yourTriesCountLabel.text = yourTriesCount
-            //scoresVC.computersTriesCount.text = "2"
+        guard segue.identifier == "goToScores" else { return }
+        guard let scoresVC = segue.destination as? ScoresVC else { return }
+        let yourTriesCount = String("Yours's tries count: \(tapCount)")
+        scoresVC.yourCount = yourTriesCount
+    }
+    
+    private func rightNumber() {
+        hintLabel.text = ""
+        performSegue(withIdentifier: "goToScores", sender: nil)
+    }
+    
+    private func wrongNumber(number: Int) {
+        if numberToGuess < number {
+            hintLabel.text = "No, my number is less than yours"
+        } else {
+            if numberToGuess > number {
+                hintLabel.text = "No, my number is more than yours"
+            }
         }
     }
 }
-extension TryTwoVC {
-    @objc func multipleTap(sender: UIButton) {
-        tapCount += 1
-        print(tapCount)
+
+extension TryTwoVC: UITextFieldDelegate {
+    @objc private func textFieldChanged() {
+        if numTF.text?.isEmpty == false {
+            guessButton.isEnabled = true
+        } else {
+            guessButton.isEnabled = false
+        }
     }
-}
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return true }
+        let newText = NSString(string: text).replacingCharacters(in: range, with: string)
+        if newText.isEmpty {
+          return true
+        }
+        return valuesRange.contains(Int(newText) ?? minValue)
+      }
+    }

@@ -14,6 +14,9 @@
 		9757984E298166D800A1B225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9757984D298166D800A1B225 /* Assets.xcassets */; };
 		97579851298166D800A1B225 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9757984F298166D800A1B225 /* LaunchScreen.storyboard */; };
 		9757985929816D8400A1B225 /* YourNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9757985829816D8400A1B225 /* YourNumberVC.swift */; };
+		9757985B29817FF200A1B225 /* TryOneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9757985A29817FF200A1B225 /* TryOneVC.swift */; };
+		9757985F2981801E00A1B225 /* ScoresVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9757985E2981801E00A1B225 /* ScoresVC.swift */; };
+		975798612982CAFC00A1B225 /* TryTwoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975798602982CAFC00A1B225 /* TryTwoVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		97579850298166D800A1B225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97579852298166D800A1B225 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9757985829816D8400A1B225 /* YourNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourNumberVC.swift; sourceTree = "<group>"; };
+		9757985A29817FF200A1B225 /* TryOneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryOneVC.swift; sourceTree = "<group>"; };
+		9757985E2981801E00A1B225 /* ScoresVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresVC.swift; sourceTree = "<group>"; };
+		975798602982CAFC00A1B225 /* TryTwoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryTwoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,9 @@
 				9757984F298166D800A1B225 /* LaunchScreen.storyboard */,
 				97579852298166D800A1B225 /* Info.plist */,
 				9757985829816D8400A1B225 /* YourNumberVC.swift */,
+				9757985A29817FF200A1B225 /* TryOneVC.swift */,
+				975798602982CAFC00A1B225 /* TryTwoVC.swift */,
+				9757985E2981801E00A1B225 /* ScoresVC.swift */,
 			);
 			path = GuessTheNumber;
 			sourceTree = "<group>";
@@ -141,10 +150,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				975798612982CAFC00A1B225 /* TryTwoVC.swift in Sources */,
 				97579849298166D600A1B225 /* StartViewController.swift in Sources */,
 				97579845298166D600A1B225 /* AppDelegate.swift in Sources */,
 				9757985929816D8400A1B225 /* YourNumberVC.swift in Sources */,
 				97579847298166D600A1B225 /* SceneDelegate.swift in Sources */,
+				9757985F2981801E00A1B225 /* ScoresVC.swift in Sources */,
+				9757985B29817FF200A1B225 /* TryOneVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

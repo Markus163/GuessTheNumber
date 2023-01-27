@@ -13,11 +13,13 @@ class TryTwoVC: UIViewController {
     @IBOutlet weak var guessButton: UIButton!
     @IBOutlet weak var hintLabel: UILabel!
     
+    @IBOutlet weak var computerTap: UILabel!
     let minValue = 1
     let maxValue = 100
     lazy var valuesRange = minValue...maxValue
     
     var tapCount: Int = 0
+    var computerTapCount: String = ""
     let numberToGuess = Int.random(in: 1...100)
     
     @IBAction func guessButtonPressed(_ sender: UIButton) {
@@ -31,20 +33,24 @@ class TryTwoVC: UIViewController {
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        computerTap.text = computerTapCount
+
         numTF.delegate = self
         numTF.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
         guessButton.isEnabled = false
         guessButton.layer.cornerRadius = 15
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "goToScores" else { return }
         guard let scoresVC = segue.destination as? ScoresVC else { return }
-        let yourTriesCount = String("Yours's tries count: \(tapCount)")
+        let yourTriesCount = String(tapCount)
+        let computerTriesCount = String(computerTapCount)
         scoresVC.yourCount = yourTriesCount
+        scoresVC.computerCount = computerTriesCount
     }
     
     private func rightNumber() {

@@ -38,15 +38,6 @@
                                     <segue destination="d8H-Ce-NLz" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="K8h-jj-aeW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfS-76-kYN">
-                                <rect key="frame" x="194" y="486" width="102" height="107"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <segue destination="rlm-Qu-urU" kind="presentation" modalPresentationStyle="fullScreen" id="h1M-vf-LrP"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -139,8 +130,8 @@ Computer is guessing</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your number is - ... ?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bp9-0k-Mo8">
-                                <rect key="frame" x="115" y="256" width="184" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your number is - ... ?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bp9-0k-Mo8">
+                                <rect key="frame" x="20" y="256" width="374" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -157,7 +148,7 @@ Computer is guessing</string>
                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="KJK-J6-Iun" eventType="touchUpInside" id="M9g-5L-tEU"/>
+                                    <action selector="moreButtonPressed:" destination="KJK-J6-Iun" eventType="touchUpInside" id="tja-oZ-gOn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Y6-DI-HIS">
@@ -173,6 +164,7 @@ Computer is guessing</string>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="equalButtonPressed:" destination="KJK-J6-Iun" eventType="touchUpInside" id="2YE-wN-IEG"/>
+                                    <segue destination="rlm-Qu-urU" kind="presentation" identifier="computerTap" modalPresentationStyle="fullScreen" id="hNy-Zc-LRF"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My number is ..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggD-sO-qhd">
@@ -202,13 +194,13 @@ Computer is guessing</string>
                         <viewLayoutGuide key="safeArea" id="2Xc-vg-IjA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="bp9-0k-Mo8" firstAttribute="leading" secondItem="2Xc-vg-IjA" secondAttribute="leading" constant="115" id="8Ol-Km-VRD"/>
+                            <constraint firstItem="bp9-0k-Mo8" firstAttribute="leading" secondItem="2Xc-vg-IjA" secondAttribute="leading" constant="20" id="8Ol-Km-VRD"/>
                             <constraint firstItem="bp9-0k-Mo8" firstAttribute="top" secondItem="ysl-7H-vyH" secondAttribute="bottom" constant="70" id="9fG-zd-XMP"/>
                             <constraint firstItem="ggD-sO-qhd" firstAttribute="centerX" secondItem="KlV-5x-aWz" secondAttribute="centerX" id="Fxg-sN-1ku"/>
                             <constraint firstItem="ysl-7H-vyH" firstAttribute="top" secondItem="2Xc-vg-IjA" secondAttribute="top" id="WiM-qc-xdp"/>
                             <constraint firstItem="ysl-7H-vyH" firstAttribute="leading" secondItem="2Xc-vg-IjA" secondAttribute="leading" constant="20" id="X1m-dk-3R4"/>
                             <constraint firstItem="ggD-sO-qhd" firstAttribute="top" secondItem="bp9-0k-Mo8" secondAttribute="bottom" constant="370" id="hb3-hn-S4y"/>
-                            <constraint firstItem="2Xc-vg-IjA" firstAttribute="trailing" secondItem="bp9-0k-Mo8" secondAttribute="trailing" constant="115" id="pXY-Cn-mz7"/>
+                            <constraint firstItem="2Xc-vg-IjA" firstAttribute="trailing" secondItem="bp9-0k-Mo8" secondAttribute="trailing" constant="20" id="pXY-Cn-mz7"/>
                             <constraint firstItem="2Xc-vg-IjA" firstAttribute="trailing" secondItem="ysl-7H-vyH" secondAttribute="trailing" constant="20" id="yUg-Sq-eM4"/>
                         </constraints>
                     </view>
@@ -274,6 +266,13 @@ You are guessing</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1as-eG-gm9">
+                                <rect key="frame" x="154" y="746" width="107" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ucg-Ai-USA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -294,6 +293,7 @@ You are guessing</string>
                     </view>
                     <navigationItem key="navigationItem" id="BJC-Uk-jDU"/>
                     <connections>
+                        <outlet property="computerTap" destination="1as-eG-gm9" id="Lua-Wd-r5h"/>
                         <outlet property="guessButton" destination="5dO-z9-1ej" id="PEw-Lr-hQS"/>
                         <outlet property="hintLabel" destination="TtE-OS-20F" id="fp5-Kv-zja"/>
                         <outlet property="numTF" destination="SOo-37-m8N" id="xp6-5x-Aog"/>
@@ -319,7 +319,7 @@ You are guessing</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your's tries count: " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufx-zV-Iyx">
-                                <rect key="frame" x="46.5" y="312" width="167.5" height="24"/>
+                                <rect key="frame" x="48" y="312" width="167.5" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -348,10 +348,30 @@ You are guessing</string>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="enterTheNumberButton:" destination="nf9-Vy-ryo" eventType="touchUpInside" id="i9b-BI-SlQ"/>
+                                    <action selector="mainMenuButtonPressed:" destination="bQ6-1b-kPg" eventType="touchUpInside" id="yPB-2f-az3"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToMainMenu" modalPresentationStyle="fullScreen" id="l4k-ko-Pb5"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Computers's tries count: " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFY-dd-VYw">
-                                <rect key="frame" x="47.5" y="381" width="226.5" height="24"/>
+                                <rect key="frame" x="48" y="381" width="226.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ou-Ou-OiZ">
+                                <rect key="frame" x="212" y="312" width="32" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="h1h-UG-Obz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WE-tC-wbJ">
+                                <rect key="frame" x="271" y="381" width="35" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="IUk-UD-Jhh"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -361,26 +381,34 @@ You are guessing</string>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="0k2-bA-kve" firstAttribute="bottom" secondItem="San-ZS-Jji" secondAttribute="bottom" constant="62" id="4ra-hb-dAW"/>
-                            <constraint firstItem="0k2-bA-kve" firstAttribute="trailing" secondItem="Rb1-WR-tw1" secondAttribute="trailing" constant="170" id="6oc-tf-hrl"/>
+                            <constraint firstItem="IFY-dd-VYw" firstAttribute="leading" secondItem="0k2-bA-kve" secondAttribute="leading" constant="48" id="7pJ-mB-w8a"/>
                             <constraint firstItem="M8C-bx-vH7" firstAttribute="top" secondItem="0k2-bA-kve" secondAttribute="top" constant="30" id="8Gr-jy-UJL"/>
                             <constraint firstItem="San-ZS-Jji" firstAttribute="top" secondItem="Rb1-WR-tw1" secondAttribute="bottom" constant="105" id="8Iz-eL-I4k"/>
-                            <constraint firstItem="0k2-bA-kve" firstAttribute="trailing" secondItem="Ufx-zV-Iyx" secondAttribute="trailing" constant="200" id="Pue-Uo-GX8"/>
                             <constraint firstItem="IFY-dd-VYw" firstAttribute="top" secondItem="Ufx-zV-Iyx" secondAttribute="bottom" constant="45" id="Tgb-As-iM9"/>
+                            <constraint firstItem="0k2-bA-kve" firstAttribute="trailing" secondItem="3Ou-Ou-OiZ" secondAttribute="trailing" constant="170" id="Ts9-Gg-EzN"/>
+                            <constraint firstItem="San-ZS-Jji" firstAttribute="top" secondItem="0WE-tC-wbJ" secondAttribute="bottom" constant="345" id="XdG-cx-fWm"/>
+                            <constraint firstItem="IFY-dd-VYw" firstAttribute="top" secondItem="3Ou-Ou-OiZ" secondAttribute="bottom" constant="45" id="bT9-6Y-Okc"/>
                             <constraint firstItem="0k2-bA-kve" firstAttribute="trailing" secondItem="San-ZS-Jji" secondAttribute="trailing" constant="20" id="bhJ-c8-ovY"/>
-                            <constraint firstItem="0k2-bA-kve" firstAttribute="trailing" secondItem="IFY-dd-VYw" secondAttribute="trailing" constant="140" id="e7f-BG-yA8"/>
+                            <constraint firstItem="Ufx-zV-Iyx" firstAttribute="leading" secondItem="0k2-bA-kve" secondAttribute="leading" constant="48" id="czc-Uk-gc5"/>
                             <constraint firstItem="San-ZS-Jji" firstAttribute="leading" secondItem="0k2-bA-kve" secondAttribute="leading" constant="20" id="eth-LL-XuD"/>
+                            <constraint firstItem="0k2-bA-kve" firstAttribute="trailing" secondItem="0WE-tC-wbJ" secondAttribute="trailing" constant="108" id="fDh-CF-S7S"/>
                             <constraint firstItem="Ufx-zV-Iyx" firstAttribute="top" secondItem="M8C-bx-vH7" secondAttribute="bottom" constant="210" id="hIM-be-xfI"/>
                             <constraint firstItem="0k2-bA-kve" firstAttribute="trailing" secondItem="M8C-bx-vH7" secondAttribute="trailing" constant="173" id="jab-JS-1C8"/>
+                            <constraint firstItem="Rb1-WR-tw1" firstAttribute="centerX" secondItem="1VA-ns-Cil" secondAttribute="centerX" id="n8Q-tW-N7a"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="azq-Kj-Q8x"/>
                     <connections>
-                        <outlet property="yourTriesCountLabel" destination="Ufx-zV-Iyx" id="wOJ-JG-Bfm"/>
+                        <outlet property="computersTriesCountLabel" destination="0WE-tC-wbJ" id="0Jp-Vl-1it"/>
+                        <outlet property="mainMenuButton" destination="San-ZS-Jji" id="PXD-EW-fWO"/>
+                        <outlet property="mainMenuButtonPressed" destination="San-ZS-Jji" id="yRP-QK-wRF"/>
+                        <outlet property="resultLabel" destination="Rb1-WR-tw1" id="7YW-gc-Akk"/>
+                        <outlet property="yourTriesCountLabel" destination="3Ou-Ou-OiZ" id="btC-tI-rZn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ch-FG-fmg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3135" y="3"/>
+            <point key="canvasLocation" x="3134.7826086956525" y="2.6785714285714284"/>
         </scene>
     </scenes>
     <resources>

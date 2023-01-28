@@ -13,7 +13,6 @@ class ScoresVC: UIViewController {
     var yourCount = ""
     var computerCount = ""
     
-    
     @IBOutlet weak var mainMenuButton: UIButton!
     @IBOutlet weak var yourTriesCountLabel: UILabel!
     @IBOutlet weak var computersTriesCountLabel: UILabel!

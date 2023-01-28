@@ -7,16 +7,13 @@
 
 import UIKit
 
-class TryTwoVC: UIViewController {
+class SecondGameRoundVC: UIViewController {
     
     @IBOutlet weak var numTF: UITextField!
     @IBOutlet weak var guessButton: UIButton!
     @IBOutlet weak var hintLabel: UILabel!
     
-    @IBOutlet weak var computerTap: UILabel!
-    let minValue = 1
-    let maxValue = 100
-    lazy var valuesRange = minValue...maxValue
+    var numberModel = NumberModel()
     
     var tapCount: Int = 0
     var computerTapCount: String = ""
@@ -32,16 +29,19 @@ class TryTwoVC: UIViewController {
             wrongNumber(number: guessNumber)
         }
     }
-    
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        computerTap.text = computerTapCount
-
+        setupView()
+        hideKeyboardWhenTappedAround()
+    }
+    
+    //MARK: - Methods
+    private func setupView() {
         numTF.delegate = self
         numTF.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
         guessButton.isEnabled = false
         guessButton.layer.cornerRadius = 15
-
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -69,7 +69,8 @@ class TryTwoVC: UIViewController {
     }
 }
 
-extension TryTwoVC: UITextFieldDelegate {
+//MARK: - Extension UITextFieldDelegate
+extension SecondGameRoundVC: UITextFieldDelegate {
     @objc private func textFieldChanged() {
         if numTF.text?.isEmpty == false {
             guessButton.isEnabled = true
@@ -77,13 +78,25 @@ extension TryTwoVC: UITextFieldDelegate {
             guessButton.isEnabled = false
         }
     }
-
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return true }
         let newText = NSString(string: text).replacingCharacters(in: range, with: string)
         if newText.isEmpty {
-          return true
+            return true
         }
-        return valuesRange.contains(Int(newText) ?? minValue)
-      }
+        return numberModel.valuesRange.contains(Int(newText) ?? 1)
     }
+}
+
+//MARK: - Extension for keyboard
+extension SecondGameRoundVC {
+    func hideKeyboardWhenTappedAround() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
+    }
+}

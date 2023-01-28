@@ -7,16 +7,13 @@
 
 import UIKit
 
-class StartViewController: UIViewController {
-
+class MainViewController: UIViewController {
+    
     @IBOutlet weak var startNewGameButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         startNewGameButton.layer.cornerRadius = 20
     }
-
-
 }
 

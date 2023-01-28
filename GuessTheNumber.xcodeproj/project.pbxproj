@@ -9,29 +9,31 @@
 /* Begin PBXBuildFile section */
 		97579845298166D600A1B225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97579844298166D600A1B225 /* AppDelegate.swift */; };
 		97579847298166D600A1B225 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97579846298166D600A1B225 /* SceneDelegate.swift */; };
-		97579849298166D600A1B225 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97579848298166D600A1B225 /* StartViewController.swift */; };
+		97579849298166D600A1B225 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97579848298166D600A1B225 /* MainViewController.swift */; };
 		9757984C298166D600A1B225 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9757984A298166D600A1B225 /* Main.storyboard */; };
 		9757984E298166D800A1B225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9757984D298166D800A1B225 /* Assets.xcassets */; };
 		97579851298166D800A1B225 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9757984F298166D800A1B225 /* LaunchScreen.storyboard */; };
-		9757985929816D8400A1B225 /* YourNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9757985829816D8400A1B225 /* YourNumberVC.swift */; };
-		9757985B29817FF200A1B225 /* TryOneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9757985A29817FF200A1B225 /* TryOneVC.swift */; };
+		9757985929816D8400A1B225 /* YourGuestNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9757985829816D8400A1B225 /* YourGuestNumberVC.swift */; };
+		9757985B29817FF200A1B225 /* FirstGameRoundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9757985A29817FF200A1B225 /* FirstGameRoundVC.swift */; };
 		9757985F2981801E00A1B225 /* ScoresVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9757985E2981801E00A1B225 /* ScoresVC.swift */; };
-		975798612982CAFC00A1B225 /* TryTwoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975798602982CAFC00A1B225 /* TryTwoVC.swift */; };
+		975798612982CAFC00A1B225 /* SecondGameRoundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975798602982CAFC00A1B225 /* SecondGameRoundVC.swift */; };
+		97BB900729854EA3000989BF /* NumberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BB900629854EA3000989BF /* NumberModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		97579841298166D600A1B225 /* GuessTheNumber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessTheNumber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97579844298166D600A1B225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97579846298166D600A1B225 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		97579848298166D600A1B225 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		97579848298166D600A1B225 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9757984B298166D600A1B225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9757984D298166D800A1B225 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97579850298166D800A1B225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97579852298166D800A1B225 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9757985829816D8400A1B225 /* YourNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourNumberVC.swift; sourceTree = "<group>"; };
-		9757985A29817FF200A1B225 /* TryOneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryOneVC.swift; sourceTree = "<group>"; };
+		9757985829816D8400A1B225 /* YourGuestNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourGuestNumberVC.swift; sourceTree = "<group>"; };
+		9757985A29817FF200A1B225 /* FirstGameRoundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstGameRoundVC.swift; sourceTree = "<group>"; };
 		9757985E2981801E00A1B225 /* ScoresVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresVC.swift; sourceTree = "<group>"; };
-		975798602982CAFC00A1B225 /* TryTwoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryTwoVC.swift; sourceTree = "<group>"; };
+		975798602982CAFC00A1B225 /* SecondGameRoundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondGameRoundVC.swift; sourceTree = "<group>"; };
+		97BB900629854EA3000989BF /* NumberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,19 +66,52 @@
 		97579843298166D600A1B225 /* GuessTheNumber */ = {
 			isa = PBXGroup;
 			children = (
-				97579844298166D600A1B225 /* AppDelegate.swift */,
-				97579846298166D600A1B225 /* SceneDelegate.swift */,
-				97579848298166D600A1B225 /* StartViewController.swift */,
-				9757984A298166D600A1B225 /* Main.storyboard */,
-				9757984D298166D800A1B225 /* Assets.xcassets */,
-				9757984F298166D800A1B225 /* LaunchScreen.storyboard */,
-				97579852298166D800A1B225 /* Info.plist */,
-				9757985829816D8400A1B225 /* YourNumberVC.swift */,
-				9757985A29817FF200A1B225 /* TryOneVC.swift */,
-				975798602982CAFC00A1B225 /* TryTwoVC.swift */,
-				9757985E2981801E00A1B225 /* ScoresVC.swift */,
+				97BB900229853911000989BF /* Model */,
+				97BB9004298539B4000989BF /* View */,
+				97BB900329853930000989BF /* Controllers */,
+				97BB900529854968000989BF /* Helpers */,
 			);
 			path = GuessTheNumber;
+			sourceTree = "<group>";
+		};
+		97BB900229853911000989BF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				97BB900629854EA3000989BF /* NumberModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		97BB900329853930000989BF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				97579848298166D600A1B225 /* MainViewController.swift */,
+				9757985829816D8400A1B225 /* YourGuestNumberVC.swift */,
+				9757985A29817FF200A1B225 /* FirstGameRoundVC.swift */,
+				975798602982CAFC00A1B225 /* SecondGameRoundVC.swift */,
+				9757985E2981801E00A1B225 /* ScoresVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		97BB9004298539B4000989BF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9757984A298166D600A1B225 /* Main.storyboard */,
+				9757984F298166D800A1B225 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		97BB900529854968000989BF /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				97579844298166D600A1B225 /* AppDelegate.swift */,
+				97579846298166D600A1B225 /* SceneDelegate.swift */,
+				9757984D298166D800A1B225 /* Assets.xcassets */,
+				97579852298166D800A1B225 /* Info.plist */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,13 +185,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				975798612982CAFC00A1B225 /* TryTwoVC.swift in Sources */,
-				97579849298166D600A1B225 /* StartViewController.swift in Sources */,
+				975798612982CAFC00A1B225 /* SecondGameRoundVC.swift in Sources */,
+				97579849298166D600A1B225 /* MainViewController.swift in Sources */,
 				97579845298166D600A1B225 /* AppDelegate.swift in Sources */,
-				9757985929816D8400A1B225 /* YourNumberVC.swift in Sources */,
+				9757985929816D8400A1B225 /* YourGuestNumberVC.swift in Sources */,
 				97579847298166D600A1B225 /* SceneDelegate.swift in Sources */,
 				9757985F2981801E00A1B225 /* ScoresVC.swift in Sources */,
-				9757985B29817FF200A1B225 /* TryOneVC.swift in Sources */,
+				97BB900729854EA3000989BF /* NumberModel.swift in Sources */,
+				9757985B29817FF200A1B225 /* FirstGameRoundVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,7 +341,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N4UDWY43TV;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GuessTheNumber/Info.plist;
+				INFOPLIST_FILE = GuessTheNumber/Helpers/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -336,7 +372,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N4UDWY43TV;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GuessTheNumber/Info.plist;
+				INFOPLIST_FILE = GuessTheNumber/Helpers/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

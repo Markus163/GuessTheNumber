@@ -31,14 +31,16 @@ class ScoresVC: UIViewController {
     }
     
     func result() {
-        if yourCount == computerCount {
-            resultLabel.text = "Draw"
-        } else {
-            if yourCount > computerCount {
-                resultLabel.text = "You Lose"
-            } else {
-                resultLabel.text = "You Win"
-            }
-        }
-    }
-}
+         if Int(yourCount) == Int(computerCount) {
+             resultLabel.text = "Draw"
+         } else {
+             guard let yC = Int(yourCount) else { return }
+             guard let cC = Int(computerCount) else { return }
+             if yC > cC {
+                 resultLabel.text = "You Lose"
+             } else {
+                 resultLabel.text = "You Win"
+             }
+         }
+     }
+ }
